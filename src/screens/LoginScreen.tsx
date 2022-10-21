@@ -1,19 +1,23 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Button, Image, StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../components/shared/CustomButton';
 
-const Login = () => {
+const Login = ({navigation}: any) => {
+
+  const loginHandler = () => {
+    navigation.push("BottomNavigation")
+  }
+
   return (
     <View style={styles.container}>
-      {/* <LoginSVG /> */}
-      <Image source={require("../assets/login-svg.png")}/>
+      <Image source={require("../assets/images/login-svg.png")}/>
       <Text style={styles.title}>Save your money</Text>
       <Text style={styles.description}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est in quis
         erat a sit.
       </Text>
-      <CustomButton style={styles.button}>Join for free</CustomButton>
-      <Text style={styles.link}>Don't have SPID or CIE? Find out more</Text>
+      <CustomButton style={styles.button} onPress={() => loginHandler()}>Join for free</CustomButton>
+      <Text onPress={loginHandler} style={styles.link}>Don't have SPID or CIE? Find out more</Text>
     </View>
   );
 };
