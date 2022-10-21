@@ -3,9 +3,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import ChatIcon from '../../assets/icons/ChatIcon';
 import Logo from '../../assets/icons/Logo';
 
-const BottomTabsHeader = () => {
+const BottomTabsHeader = ({color}: any) => {
   return (
-    <View style={styles.container}>
+    <View
+      style={{...styles.container, ...{backgroundColor: color || '#7476ED'}}}
+    >
       <View style={styles.toolbar}>
         <Logo />
         <ChatIcon />

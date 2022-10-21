@@ -1,14 +1,23 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import BottomTabsHeader from '../components/shared/BottomTabsHeader';
 
 const ExtractScreen = () => {
-    return (
-        <View>
-            <Text>ExtractScreen</Text>
-        </View>
-    )
-}
+  return (
+    <View>
+      <BottomTabsHeader />
+      <Text style={styles.title}>Extract Screen</Text>
+    </View>
+  );
+};
 
-export default ExtractScreen
+export default ExtractScreen;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 32,
+    fontWeight: '400',
+    color: '#7476ED',
+    marginLeft: 16
+  },
+});
