@@ -15,7 +15,7 @@ export default ExtractScreen;
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 32,
+    fontSize: 30,
     fontWeight: '400',
     color: '#7476ED',
     marginLeft: 16

@@ -1,42 +1,55 @@
 import React from 'react';
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableNativeFeedback,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import ArrowRightIcon from '../../assets/icons/ArrowRightIcon';
 
 const PaymentListItem = ({title, date, amount}: any) => {
+  const navigation: any = useNavigation();
+
+  const gotToDetails = () => {
+    navigation.push("PaymentDetails")
+  }
+
   return (
-    <View style={styles.container}>
-      <View style={styles.containerContent}>
-        <View style={styles.imageContainer}>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Image source={require('../../assets/images/logo.png')} />
+    <TouchableNativeFeedback onPress={gotToDetails}>
+      <View style={styles.container}>
+        <View style={styles.containerContent}>
+          <View style={styles.imageContainer}>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <Image source={require('../../assets/images/logo.png')} />
+            </View>
           </View>
-        </View>
-        <View style={{width: 220, marginLeft: 7, marginRight: 8}}>
-          <Text style={styles.primaryText}>
-            {title}
-          </Text>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-            }}
-          >
-            <Text style={styles.date}>{date}</Text>
-            <Text style={styles.amount}>{amount}</Text>
+          <View style={{width: 220, marginLeft: 7, marginRight: 8}}>
+            <Text style={styles.primaryText}>{title}</Text>
+            <View
+              style={{
+                flex: 1,
+                flexDirection: 'row',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+              }}
+            >
+              <Text style={styles.date}>{date}</Text>
+              <Text style={styles.amount}>{amount}</Text>
+            </View>
           </View>
+          <ArrowRightIcon />
         </View>
-        <ArrowRightIcon />
       </View>
-    </View>
+    </TouchableNativeFeedback>
   );
 };
 
@@ -52,7 +65,7 @@ const styles = StyleSheet.create({
     paddingRight: 8,
     paddingBottom: 12,
     paddingLeft: 8,
-    marginBottom: 10
+    marginBottom: 10,
   },
   containerContent: {
     flex: 1,

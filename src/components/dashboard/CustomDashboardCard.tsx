@@ -1,14 +1,16 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, TouchableNativeFeedback} from 'react-native';
 
 const CustomDashboardCard = ({icon, status, value, valueColor}: any) => {
   return (
     <View style={styles.container}>
-      <View style={styles.containerCenter}>
-        {icon}
-        <Text style={styles.status}>{status}</Text>
-        <Text style={{...styles.value, color: valueColor}}>{value}</Text>
-      </View>
+      <TouchableNativeFeedback>
+        <View style={styles.containerCenter}>
+          {icon}
+          <Text style={styles.status}>{status}</Text>
+          <Text style={{...styles.value, color: valueColor}}>{value}</Text>
+        </View>
+      </TouchableNativeFeedback>
     </View>
   );
 };
@@ -33,11 +35,11 @@ const styles = StyleSheet.create({
     fontWeight: '400',
     color: '#83828E',
     marginTop: 7,
-    marginBottom: 2
+    marginBottom: 2,
   },
   value: {
     fontSize: 16,
-    fontWeight: "400",
+    fontWeight: '400',
     color: '#F83E5A',
   },
 });

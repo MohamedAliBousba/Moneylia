@@ -4,7 +4,7 @@ import MovementsToPay from '../components/pagepa/MovementsToPay';
 import TaxPayments from '../components/pagepa/TaxPayments';
 import BottomTabsHeader from '../components/shared/BottomTabsHeader';
 
-const PagePaScreen = () => {
+const PagePaScreen = ({navigation}: any) => {
   return (
     <View>
       <BottomTabsHeader color="#BF7EE6" />

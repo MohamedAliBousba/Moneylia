@@ -11,6 +11,7 @@ import {
 import PaymentListItem from './PaymentListItem';
 
 const MovementsToPay = () => {
+  
   const renderItem = ({item}: any) => (
     <PaymentListItem title={item.title} date={item.date} amount={item.amount} />
   );
