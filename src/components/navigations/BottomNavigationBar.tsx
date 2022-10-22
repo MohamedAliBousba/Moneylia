@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {View} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import DashboardScreen from '../../screens/DashboardScreen';
 import HomeIcon from '../../assets/icons/HomeIcon';
@@ -14,43 +14,39 @@ const Tab = createBottomTabNavigator();
 
 const BottomNavigationBar = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen
-        name="Dashboard"
-        component={DashboardScreen}
-        options={{
-          tabBarIcon: ({color}) => <HomeIcon color={color} />,
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Extract"
-        component={ExtractScreen}
-        options={{
-          tabBarIcon: ({color}) => <ExtractIcon color={color} />,
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="PagePaScreen"
-        component={PagePaScreen}
-        options={{
-          tabBarIcon: ({color}) => <PagePaIcon color={color} />,
-          headerShown: false,
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
-        options={{
-          tabBarIcon: ({color}) => <ProfileIcon color={color} />,
-          headerShown: false,
-        }}
-      />
+    <Tab.Navigator
+      screenOptions={{
+        tabBarActiveTintColor: '#7476ED',
+      }}
+    >
+      {tabBarList.map(({name, component, icon: Icon}) => (
+        <Tab.Screen
+          key={name}
+          name={name}
+          component={component}
+          options={{
+            tabBarIcon: ({color, focused}) => (
+              <View
+                style={
+                  focused ? {borderTopColor: '#7476ED', borderTopWidth: 2} : {}
+                }
+              >
+                <Icon color={color} />
+              </View>
+            ),
+            headerShown: false,
+          }}
+        />
+      ))}
     </Tab.Navigator>
   );
 };
 
-export default BottomNavigationBar;
+const tabBarList = [
+  {name: 'Dashboard', component: DashboardScreen, icon: HomeIcon},
+  {name: 'Extract', component: ExtractScreen, icon: ExtractIcon},
+  {name: 'PagePaScreen', component: PagePaScreen, icon: PagePaIcon},
+  {name: 'Profile', component: ProfileScreen, icon: ProfileIcon},
+];
 
-const styles = StyleSheet.create({});
+export default BottomNavigationBar;
