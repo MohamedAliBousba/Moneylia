@@ -1,13 +1,11 @@
 {
     "Stack": {
         "Screen": "Login",
+        "Screen1": "Payment details",
         "BottomTabs": {
             "Screen0": "Dashboard",
             "Screen1": "Extract",
-            "Stack": {
-                "Screen0": "PagePA",
-                "Screen1": "Payment details"
-            },
+            "Screen2": "PagePA",
             "Screen3": "Profile"
         }
     }

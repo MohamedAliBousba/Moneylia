@@ -9,7 +9,6 @@ import PagePaScreen from '../../screens/PagePaScreen';
 import PagePaIcon from '../../assets/icons/PagePaIcon';
 import ProfileScreen from '../../screens/ProfileScreen';
 import ProfileIcon from '../../assets/icons/ProfileIcon';
-import PaymentStack from './PaymentStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -33,8 +32,8 @@ const BottomNavigationBar = () => {
         }}
       />
       <Tab.Screen
-        name="PagePAStack"
-        component={PaymentStack}
+        name="PagePaScreen"
+        component={PagePaScreen}
         options={{
           tabBarIcon: ({color}) => <PagePaIcon color={color} />,
           headerShown: false,
