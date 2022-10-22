@@ -1,12 +1,23 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Dimensions, StyleSheet, Text, View} from 'react-native';
 import BottomTabsHeader from '../components/shared/BottomTabsHeader';
 
 const ProfileScreen = () => {
   return (
     <View>
       <BottomTabsHeader />
-      <Text style={styles.title}>Profile Screen</Text>
+      <View style={{height: Dimensions.get('window').height - 100}}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <Text style={styles.title}>Profile Screen</Text>
+        </View>
+      </View>
     </View>
   );
 };
