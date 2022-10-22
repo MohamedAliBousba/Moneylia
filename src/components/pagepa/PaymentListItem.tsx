@@ -6,15 +6,19 @@ import {
   Image,
   TouchableNativeFeedback,
 } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import ArrowRightIcon from '../../assets/icons/ArrowRightIcon';
 
 const PaymentListItem = ({title, date, amount}: any) => {
   const navigation: any = useNavigation();
 
   const gotToDetails = () => {
-    navigation.push("PaymentDetails")
-  }
+    navigation.push('PaymentDetails', {
+      title,
+      date,
+      amount,
+    });
+  };
 
   return (
     <TouchableNativeFeedback onPress={gotToDetails}>

@@ -2,7 +2,9 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../components/shared/CustomButton';
 
-const PaymentDetailsScreen = () => {
+const PaymentDetailsScreen = ({route}: any) => {
+  const {amount, date, title} = route.params;
+
   return (
     <View style={styles.container}>
       <View>
@@ -24,12 +26,12 @@ const PaymentDetailsScreen = () => {
       <View style={styles.divider} />
       <Text style={styles.status}>Causal</Text>
       <Text style={styles.value}>
-        SUBJECTIVE AND SUPPLEMENTARY CONTRIBUTION YEAR 2021 EXPIRY 28-02-2022
+        {title}
       </Text>
 
       <View style={styles.divider} />
       <Text style={styles.status}>Expiry date</Text>
-      <Text style={styles.value}>02/28/2022</Text>
+      <Text style={styles.value}>{date}</Text>
 
       <View style={styles.divider} />
       <Text style={styles.status}>Creditor tax code</Text>
@@ -42,7 +44,7 @@ const PaymentDetailsScreen = () => {
       <View style={{height: 50}}>
         <View style={styles.flex}>
           <Text style={styles.totalDue}>Total due</Text>
-          <Text style={styles.amount}>€ 1,234.99</Text>
+          <Text style={styles.amount}>{amount}</Text>
         </View>
       </View>
       <CustomButton style={styles.button}>Pay now</CustomButton>
@@ -106,6 +108,6 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    backgroundColor: "#BF7EE6"
+    backgroundColor: '#BF7EE6',
   },
 });
