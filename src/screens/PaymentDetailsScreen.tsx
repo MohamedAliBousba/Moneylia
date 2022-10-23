@@ -8,11 +8,11 @@ const PaymentDetailsScreen = ({route}: any) => {
   return (
     <View style={styles.container}>
       <View>
-        <View style={{...styles.flex, marginBottom: 20, marginTop: 10}}>
+        <View style={{...styles.flex, marginBottom: 20, marginTop: 16}}>
           <Text style={styles.title}>Payment notice</Text>
           <View style={styles.imageContainer}>
             <View style={{...styles.flex, justifyContent: 'center'}}>
-              <Image source={require('../assets/images/logo.png')} />
+              <Image source={require('../assets/images/logo.png')} style={{height: 38, width: 38}}/>
             </View>
           </View>
         </View>
@@ -20,14 +20,12 @@ const PaymentDetailsScreen = ({route}: any) => {
       <View style={styles.divider} />
       <Text style={styles.status}>Creditor</Text>
       <Text style={styles.value}>
-        {`ENPACL\n Via del Caravaggio n. 78\n 00147 (RM)`}
+        {`ENPACL\nVia del Caravaggio n. 78\n00147 (RM)`}
       </Text>
 
       <View style={styles.divider} />
       <Text style={styles.status}>Causal</Text>
-      <Text style={styles.value}>
-        {title}
-      </Text>
+      <Text style={styles.value}>{title}</Text>
 
       <View style={styles.divider} />
       <Text style={styles.status}>Expiry date</Text>
@@ -42,6 +40,7 @@ const PaymentDetailsScreen = ({route}: any) => {
       <Text style={{...styles.value, flexGrow: 1}}>301000000014982222</Text>
 
       <View style={{height: 50}}>
+        <View style={styles.divider} />
         <View style={styles.flex}>
           <Text style={styles.totalDue}>Total due</Text>
           <Text style={styles.amount}>{amount}</Text>
@@ -68,6 +67,7 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     flex: 1,
     flexDirection: 'column',
+    backgroundColor: "#f5f5f5"
   },
   title: {
     color: '#3A3B7B',
@@ -77,13 +77,17 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     backgroundColor: '#0066CC1A',
-    width: 40,
-    height: 40,
+    width: 45,
+    height: 45,
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4,
+    borderBottomLeftRadius: 4,
   },
   divider: {
     backgroundColor: '#EAEAEC',
-    height: 1,
-    marginBottom: 7,
+    height: 1.5,
+    marginBottom: 10,
     marginTop: 10,
   },
   status: {
@@ -109,5 +113,6 @@ const styles = StyleSheet.create({
   button: {
     width: '100%',
     backgroundColor: '#BF7EE6',
+    marginTop: 5
   },
 });

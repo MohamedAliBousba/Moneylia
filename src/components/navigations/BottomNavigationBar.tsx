@@ -45,7 +45,7 @@ const BottomNavigationBar = () => {
 const tabBarList = [
   {name: 'Dashboard', component: DashboardScreen, icon: HomeIcon},
   {name: 'Extract', component: ExtractScreen, icon: ExtractIcon},
-  {name: 'PagePaScreen', component: PagePaScreen, icon: PagePaIcon},
+  {name: 'PagePa', component: PagePaScreen, icon: PagePaIcon},
   {name: 'Profile', component: ProfileScreen, icon: ProfileIcon},
 ];
 

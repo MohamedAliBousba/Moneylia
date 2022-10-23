@@ -80,6 +80,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#0066CC1A',
     height: 56,
     width: 56,
+    borderTopLeftRadius: 4,
+    borderTopRightRadius: 4,
+    borderBottomRightRadius: 4,
+    borderBottomLeftRadius: 4,
   },
   primaryText: {
     color: '#312E43',
