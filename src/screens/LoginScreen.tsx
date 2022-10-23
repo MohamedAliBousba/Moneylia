@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../components/shared/CustomButton';
 
 const Login = ({navigation}: any) => {

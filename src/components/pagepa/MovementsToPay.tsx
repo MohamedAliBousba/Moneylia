@@ -1,17 +1,10 @@
 import React from 'react';
-import {
-    Dimensions,
-  FlatList,
-  ListView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Dimensions, FlatList, StyleSheet, Text, View} from 'react-native';
 import PaymentListItem from './PaymentListItem';
 
+
+
 const MovementsToPay = () => {
-  
   const renderItem = ({item}: any) => (
     <PaymentListItem title={item.title} date={item.date} amount={item.amount} />
   );
@@ -43,7 +36,7 @@ const styles = StyleSheet.create({
     color: '#6F6D7B',
     fontWeight: '400',
     fontSize: 14,
-    marginBottom: 10
+    marginBottom: 10,
   },
 });
 

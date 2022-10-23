@@ -1,7 +1,13 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View, ViewStyle} from 'react-native';
 
-const CustomButton = ({children, style, onPress}: any) => {
+interface ICustomButton {
+  children: string,
+  style: ViewStyle,
+  onPress?: () => void
+}
+
+const CustomButton: React.FC<ICustomButton> = ({children, style, onPress}) => {
   return (
     <View style={{...styles.button, ...style}}>
       <TouchableOpacity style={styles.buttonContent} onPress={onPress}>

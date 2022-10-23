@@ -3,7 +3,11 @@ import {StyleSheet, Text, View} from 'react-native';
 import ChatIcon from '../../assets/icons/ChatIcon';
 import Logo from '../../assets/icons/Logo';
 
-const BottomTabsHeader = ({color}: any) => {
+interface IBottomTabsHeader {
+  color?: string;
+}
+
+const BottomTabsHeader: React.FC<IBottomTabsHeader> = ({color}) => {
   return (
     <View
       style={{...styles.container, ...{backgroundColor: color || '#7476ED'}}}

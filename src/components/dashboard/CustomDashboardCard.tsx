@@ -1,7 +1,14 @@
 import React from 'react';
 import {StyleSheet, Text, View, TouchableNativeFeedback} from 'react-native';
 
-const CustomDashboardCard = ({icon, status, value, valueColor}: any) => {
+interface ICustomDashboardCard {
+  icon?: any;
+  status: string;
+  value: string;
+  valueColor: string;
+}
+
+const CustomDashboardCard: React.FC<ICustomDashboardCard> = ({icon, status, value, valueColor}) => {
   return (
     <View style={styles.container}>
       <TouchableNativeFeedback>

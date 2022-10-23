@@ -8,8 +8,15 @@ import {
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 import ArrowRightIcon from '../../assets/icons/ArrowRightIcon';
+import { BottomTabNavigationProp } from '@react-navigation/bottom-tabs';
 
-const PaymentListItem = ({title, date, amount}: any) => {
+interface IPaymentListItem {
+  title?: string;
+  date?: string;
+  amount?: string;
+}
+
+const PaymentListItem: React.FC<IPaymentListItem> = ({title, date, amount}) => {
   const navigation: any = useNavigation();
 
   const gotToDetails = () => {
