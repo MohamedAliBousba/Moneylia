@@ -2,7 +2,17 @@ import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../components/shared/CustomButton';
 
-const PaymentDetailsScreen = ({route}: any) => {
+interface IPaymentDetailsScreen {
+  route: {
+    params: {
+      amount: string;
+      date: string;
+      title: string;
+    };
+  };
+}
+
+const PaymentDetailsScreen: React.FC<IPaymentDetailsScreen> = ({route}) => {
   const {amount, date, title} = route.params;
 
   return (
@@ -12,7 +22,10 @@ const PaymentDetailsScreen = ({route}: any) => {
           <Text style={styles.title}>Payment notice</Text>
           <View style={styles.imageContainer}>
             <View style={{...styles.flex, justifyContent: 'center'}}>
-              <Image source={require('../assets/images/logo.png')} style={{height: 38, width: 38}}/>
+              <Image
+                source={require('../assets/images/logo.png')}
+                style={{height: 38, width: 38}}
+              />
             </View>
           </View>
         </View>
@@ -67,7 +80,7 @@ const styles = StyleSheet.create({
     paddingBottom: 16,
     flex: 1,
     flexDirection: 'column',
-    backgroundColor: "#f5f5f5"
+    backgroundColor: '#f5f5f5',
   },
   title: {
     color: '#3A3B7B',
@@ -113,6 +126,6 @@ const styles = StyleSheet.create({
   button: {
     width: '100%',
     backgroundColor: '#BF7EE6',
-    marginTop: 5
+    marginTop: 5,
   },
 });
