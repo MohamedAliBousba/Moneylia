@@ -1,23 +1,31 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StatusBar, StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../components/shared/CustomButton';
 
 const Login = ({navigation}: any) => {
-
   const loginHandler = () => {
-    navigation.push("BottomNavigation")
-  }
+    navigation.push('BottomNavigation');
+  };
 
   return (
     <View style={styles.container}>
-      <Image source={require("../assets/images/login-svg.png")}/>
+      <StatusBar
+        animated={true}
+        backgroundColor="#ffffff"
+        barStyle='dark-content'
+      />
+      <Image source={require('../assets/images/login-svg.png')} />
       <Text style={styles.title}>Save your money</Text>
       <Text style={styles.description}>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est in quis
         erat a sit.
       </Text>
-      <CustomButton style={styles.button} onPress={() => loginHandler()}>Join for free</CustomButton>
-      <Text onPress={loginHandler} style={styles.link}>Don't have SPID or CIE? Find out more</Text>
+      <CustomButton style={styles.button} onPress={() => loginHandler()}>
+        Join for free
+      </CustomButton>
+      <Text onPress={loginHandler} style={styles.link}>
+        Don't have SPID or CIE? Find out more
+      </Text>
     </View>
   );
 };
@@ -30,6 +38,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    backgroundColor: "#ffffff"
   },
   title: {
     color: '#3A3B7B',

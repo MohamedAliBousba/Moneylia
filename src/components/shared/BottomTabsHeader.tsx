@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import ChatIcon from '../../assets/icons/ChatIcon';
 import Logo from '../../assets/icons/Logo';
 

@@ -1,5 +1,5 @@
-import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, { useEffect } from 'react';
+import {StatusBar, StyleSheet, Text, View} from 'react-native';
 import BankIcon from '../assets/icons/BankIcon';
 import ChartPieIcon from '../assets/icons/ChartPieIcon';
 import CreditCardIcon from '../assets/icons/CreditCardIcon';
@@ -10,8 +10,14 @@ import WelcomeSection from '../components/dashboard/WelcomeSection';
 import BottomTabsHeader from '../components/shared/BottomTabsHeader';
 
 const DashboardScreen = () => {
+
   return (
     <View>
+       <StatusBar
+        animated={true}
+        backgroundColor="#7476ED"
+        barStyle='light-content'
+      />
       <BottomTabsHeader />
       <WelcomeSection />
       <UserSummaryCard />

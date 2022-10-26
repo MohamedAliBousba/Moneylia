@@ -1,10 +1,16 @@
 import React from 'react';
-import {Dimensions, StyleSheet, Text, View} from 'react-native';
+import {Dimensions, StatusBar, StyleSheet, Text, View} from 'react-native';
 import BottomTabsHeader from '../components/shared/BottomTabsHeader';
 
 const ExtractScreen = () => {
+  
   return (
     <View>
+      <StatusBar
+        animated={true}
+        backgroundColor="#7476ED"
+        barStyle='light-content'
+      />
       <BottomTabsHeader />
       <View style={{height: Dimensions.get('window').height - 100}}>
         <View

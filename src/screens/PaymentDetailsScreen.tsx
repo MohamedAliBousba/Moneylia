@@ -1,22 +1,13 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StatusBar, StyleSheet, Text, View} from 'react-native';
 import CustomButton from '../components/shared/CustomButton';
 
-interface IPaymentDetailsScreen {
-  route: {
-    params: {
-      amount: string;
-      date: string;
-      title: string;
-    };
-  };
-}
-
-const PaymentDetailsScreen: React.FC<IPaymentDetailsScreen> = ({route}) => {
+const PaymentDetailsScreen: React.FC<any> = ({route}) => {
   const {amount, date, title} = route.params;
 
   return (
     <View style={styles.container}>
+      <StatusBar backgroundColor={'#BF7EE6'} barStyle="light-content" />
       <View>
         <View style={{...styles.flex, marginBottom: 20, marginTop: 16}}>
           <Text style={styles.title}>Payment notice</Text>

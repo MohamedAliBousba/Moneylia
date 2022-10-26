@@ -22,7 +22,6 @@ const MainNavigationStack = () => {
           headerTintColor: '#fff',
           headerTitleAlign: 'center'
         }}
-        // options={{headerShown: false}}
       />
       <Stack.Screen name="BottomNavigation" component={BottomNavigationBar} options={{headerShown: false}}/>
     </Stack.Navigator>
